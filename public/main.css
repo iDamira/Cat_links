@@ -1,0 +1,64 @@
+/** {
+  border: 1px solid black;
+}
+*/
+.header {
+  height: 100px;
+  background-color: #fc9870;
+}
+
+.siteName {
+  width: 45%;
+  float: left;
+  overflow: auto;
+}
+
+.searchForm, .randomFacts {
+  float: left;
+  width: 40%;
+}
+
+.navbar {
+  width: 45%;
+  float: left;
+  overflow: auto;
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.navbar li {
+  display: inline-block;
+  float: right;
+  padding: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.body {
+  clear: both;
+}
+
+.body h2 form {
+  clear: both;
+}
+
+.loginForm {
+  border: 3px double black;
+  border-radius: 15px;
+  margin: 15% 20% 0 20%;
+  padding: 5%;
+}
+
+.body {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+
+
+

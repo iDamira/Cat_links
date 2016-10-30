@@ -4,10 +4,35 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-  <p><%= randomFact.facts %></p>
-  <h3> <%= result.petfinder.breeds.breed[0] %></h3>
+<div class="header">
+<div class="siteName">
+  <h1>Cat_links</h1>
+  <p>Find your purrrfect kitten here</p>
+  </div>
+<div class="navbar">
+<ul>
+  <li><a href="<%= '/signup' %>">Register</a></li>
+  <li><a href="<%= '/login' %>">Login</a></li>
+  <li><a href="<%= '/userprofile' %>">Profile</a></li>
+</ul>
+</div>
+</div>
+<div class="body">
+<div class="searchForm">
+  <h2>Start your search</h2>
+  <form action="index_submit" method="get" accept-charset="utf-8">
+    <h4>Breed:</h4><input type="text" name="" value="" placeholder="">
+    <h4>State:</h4><input type="text" name=""> <h4>City:</h4><input type="text" name="">
+    <button type="submit">Search</button>
+  </form>
+  </div>
+  <div class="randomFacts">
+    <p><%= randomFact.facts %></p>
+  </div>
+  </div>
 </body>
 </html>
