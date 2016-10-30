@@ -9,14 +9,14 @@
 </head>
 <body>
   <div class="registerForm">
-  <form action="" method="get" accept-charset="utf-8">
+  <form action="/users" method="post" accept-charset="utf-8">
   I am: <select><option value="buyer">Buyer</option>
   <option value="breeder">Breeder</option>
     </select>
     <br>
     <br>
-    <input type="text" name="" placeholder="UserName"><br>
-    <input type="text" name="" placeholder="Password"><br>
+    <input type="text" name="user[username]" placeholder="UserName"><br>
+    <input type="password" name="user[password]" placeholder="Password"><br>
     <input type="text" name="" placeholder="email address"><br>
     <input type="text" name="" placeholder="Phone Number"><br>
       <h4>Legal:</h4>
@@ -25,7 +25,7 @@
     <input type="text" name="" placeholder="City"><br>
     <input type="text" name="" placeholder="State"><br>
     <input type="text" name="" placeholder="Zip Code"><br><br>
-    <button type="submit">Register</button>
+    <input type="submit" value="Register">
   </form>
   </div>
 </body>
