@@ -13,7 +13,7 @@ const authRouter = express.Router();
  * and save the user to the database
  */
 authRouter.post('/', logIn, (req, res) => {
-  res.redirect('/users/account');
+  res.redirect('/users/profile');
 });
 
 // Logout by assigning null to the userId in the session
