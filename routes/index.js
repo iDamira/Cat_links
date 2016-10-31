@@ -17,5 +17,8 @@ indexRouter.get('/signup', (req, res) => {
   res.render('index/newUser');
 });
 
+indexRouter.get('/newcat', (req, res) => {
+  res.render('index/newKitten');
+});
 
 module.exports = indexRouter;
