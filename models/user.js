@@ -11,22 +11,27 @@ const SALTROUNDS = 10;
 function createUser(req, res, next) {
   const userObject = {
     username: req.body.user.username,
+    password: bcrypt.hashSync(req.body.user.password, SALTROUNDS),
     email: req.body.user.email,
-
-    // Store hashed password
-    password: bcrypt.hashSync(req.body.user.password, SALTROUNDS)
+    phone: req.body.user.phone,
+    firstname: req.body.user.firstname,
+    lastname: req.body.user.lastname,
+    city: req.body.user.city,
+    state: req.body.user.state,
+    zipcode: req.body.user.zipcode,
+    type: req.body.user.usertype,
   };
 
-  getDB().then((db) => {
-    db.collection('users')
-      .insert(userObject, (insertErr, dbUser) => {
-        if (insertErr) return next(insertErr);
+getDB().then((db) => {
+  db.collection('users')
+  .insert(userObject, (insertErr, dbUser) => {
+    if (insertErr) return next(insertErr);
 
-        res.user = dbUser;
-        db.close();
-        return next();
-      });
+    res.user = dbUser;
+    db.close();
+    return next();
   });
+});
 }
 
 function getUserById(id) {
@@ -60,5 +65,5 @@ function getUserByUsername(username) {
 module.exports = {
   createUser,
   getUserById,
-  getUserByUsername
+  getUserByUsername,
 };

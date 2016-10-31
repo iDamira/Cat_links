@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Register Page</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <div class="registerForm">
+  <form action="/users" method="post" accept-charset="utf-8">
+  I am:
+  Breeder <input type="radio" name="user[usertype]" value="breeder" placeholder="breeder">
+  Buyer <input type="radio" name="user[usertype]" value="buyer" placeholder="buyer">
+    <br>
+    <br>
+    <input type="text" name="user[username]" value="" placeholder="UserName"><br>
+    <input type="password" name="user[password]" value="" placeholder="Password"><br>
+    <input type="text" name="user[email]" value="" placeholder="email address"><br>
+    <input type="text" name="user[phone]" value="" placeholder="Phone Number"><br>
+      <h4>Legal:</h4>
+    <input type="text" name="user[firstname]" value="" placeholder="First Name"><br>
+    <input type="text" name="user[lastname]" value="" placeholder="Last Name"><br>
+    <input type="text" name="user[city]" value="" placeholder="City"><br>
+    <input type="text" name="user[state]" value="" placeholder="State"><br>
+    <input type="text" name="user[zipcode]" value="" placeholder="Zip Code"><br><br>
+    <input type="submit" value="Register">
+  </form>
+  </div>
+</body>
+</html>

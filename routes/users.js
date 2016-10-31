@@ -1,17 +1,15 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
-const express      = require('express');
-const { createUser }    = require('../models/user.js');
-const { authenticate }   = require('../lib/auth');
-
-const usersRouter  = express.Router();
+const usersRouter  = require('express').Router();
+const { createUser } = require('../models/user');
+const { authenticate } = require('../lib/auth');
 
 /**
  * Creates a new user by handling the POST request from a form with action `/users`
  * It uses the createUser middleware from the user model
  */
 usersRouter.post('/', createUser, (req, res) => {
-  res.redirect('/');
+  res.redirect('/login');
 });
 
 /**
@@ -20,7 +18,11 @@ usersRouter.post('/', createUser, (req, res) => {
  * It is "protected" by the authenticate middleware from the auth library
  */
 usersRouter.get('/profile', authenticate, (req, res) => {
-  res.render('users/profile', { user: res.user });
+  res.render('users/account', {
+    user: res.user,
+  });
 });
 
+
 module.exports = usersRouter;
+

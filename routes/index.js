@@ -1,10 +1,21 @@
-const router = require('express').Router();
+const indexRouter = require('express').Router();
 const { getRandomFact } = require('../services/catfact');
 
-router.get('/', getRandomFact, (req, res) => {
-  res.render('index', {
+indexRouter.get('/', getRandomFact, (req, res) => {
+  res.render('index/home', {
     randomFact: res.result,
   });
 });
 
-module.exports = router;
+// This route serves your `/login` form
+indexRouter.get('/login', (req, res) => {
+  res.render('index/existingUser');
+});
+
+// This route serves your `/signup` form
+indexRouter.get('/signup', (req, res) => {
+  res.render('index/newUser');
+});
+
+
+module.exports = indexRouter;
