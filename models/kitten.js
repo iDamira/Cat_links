@@ -1,31 +1,22 @@
-
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 
 const { ObjectID } = require('mongodb');
 const { getDB }    = require('../lib/dbConnect.js');
-const bcrypt       = require('bcryptjs');
 
-const SALTROUNDS = 10;
-
-function createUser(req, res, next) {
+function createKitten(req, res, next) {
   const userObject = {
-    picture: req.body.user.pic,
-    username: req.body.user.username,
-    password: bcrypt.hashSync(req.body.user.password, SALTROUNDS),
-    email: req.body.user.email,
-    phone: req.body.user.phone,
-    firstname: req.body.user.firstname,
-    lastname: req.body.user.lastname,
-    city: req.body.user.city,
-    state: req.body.user.state,
-    zipcode: req.body.user.zipcode,
-    type: req.body.user.usertype,
+    pictue: req.body.user.kpic,
+    name: req.body.user.kittenname,
+    gender: req.body.user.gender,
+    breed: req.body.user.breed,
+    littersize: req.body.user.littersize,
+    breedername: req.body.user.username,
   };
 
 getDB().then((db) => {
-  db.collection('users')
-  .insert(userObject, (insertErr, dbUser) => {
+  db.collection('kittens')
+  .insert(userObject, (insertErr, user) => {
     if (insertErr) return next(insertErr);
 
     res.user = dbUser;
@@ -35,10 +26,10 @@ getDB().then((db) => {
 });
 }
 
-function getUserById(id) {
+function getKittenById(id) {
   return getDB().then((db) => {
     const promise = new Promise((resolve, reject) => {
-      db.collection('users')
+      db.collection('kittens')
         .findOne({ _id: ObjectID(id) }, (findError, user) => {
           if (findError) reject(findError);
           db.close();
@@ -49,10 +40,10 @@ function getUserById(id) {
   });
 }
 
-function getUserByUsername(username) {
+function getKittenByKittenname(username) {
   return getDB().then((db) => {
     const promise = new Promise((resolve, reject) => {
-      db.collection('users')
+      db.collection('kittens')
         .findOne({ username }, (findError, user) => {
           if (findError) reject(findError);
           db.close();
@@ -64,7 +55,7 @@ function getUserByUsername(username) {
 }
 
 module.exports = {
-  createUser,
-  getUserById,
-  getUserByUsername,
+  createKitten,
+  getKittenById,
+  getKittenByKittenname,
 };

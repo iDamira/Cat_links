@@ -1,5 +1,7 @@
 const indexRouter = require('express').Router();
 const { getRandomFact } = require('../services/catfact');
+const { authenticate } = require('../lib/auth');
+
 
 indexRouter.get('/', getRandomFact, (req, res) => {
   res.render('index/home', {
@@ -19,6 +21,12 @@ indexRouter.get('/signup', (req, res) => {
 
 indexRouter.get('/newcat', (req, res) => {
   res.render('index/newKitten');
+});
+
+indexRouter.get('/profile', authenticate, (req, res) => {
+  res.render('users/account', {
+    user: res.user,
+  });
 });
 
 module.exports = indexRouter;

@@ -10,6 +10,7 @@ const methodOverride  = require('method-override');
 const indexRouter     = require('./routes/index.js');
 const authRouter      = require('./routes/auth');
 const usersRouter     = require('./routes/users');
+const kittensRouter   = require('./routes/kittens');
 
 const app             = express();
 const SECRET          = 'tacos3000';
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
+app.use('/kittens', kittensRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log('now listening to port', port));

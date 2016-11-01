@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
-<h1>Hello</h1>
+<form action="/kittens" method="post" accept-charset="utf-8">
+<input type="file" name="user[kpic]" accept="image/*"><br>
+<input type="text" name="user[kittenname]" value="" placeholder="Kitten Name"><br>
+<input type="text" name="user[gender]" value="" placeholder="Kitten Gender"><br>
+<input type="text" name="user[breed]" value="" placeholder="Breed"><br>
+<input type="text" name="user[littersize]" value="" placeholder="Litter Size"><br>
+<input type="hidden" name="user[username]" value="" placeholder="Breeder Name">
+<input type="submit" value="Submit">
+</form>
 </body>
 </html>
