@@ -5,7 +5,7 @@ const { ObjectID } = require('mongodb');
 const { getDB }    = require('../lib/dbConnect.js');
 
 function createKitten(req, res, next) {
-  const userObject = {
+  const kittenObject = {
     pictue: req.body.user.kpic,
     name: req.body.user.kittenname,
     gender: req.body.user.gender,
@@ -16,10 +16,10 @@ function createKitten(req, res, next) {
 
 getDB().then((db) => {
   db.collection('kittens')
-  .insert(userObject, (insertErr, user) => {
+  .insert(kittenObject, (insertErr, dbKitten) => {
     if (insertErr) return next(insertErr);
 
-    res.user = dbUser;
+    res.kitten = dbKitten;
     db.close();
     return next();
   });
@@ -30,24 +30,24 @@ function getKittenById(id) {
   return getDB().then((db) => {
     const promise = new Promise((resolve, reject) => {
       db.collection('kittens')
-        .findOne({ _id: ObjectID(id) }, (findError, user) => {
+        .findOne({ _id: ObjectID(id) }, (findError, kitten) => {
           if (findError) reject(findError);
           db.close();
-          resolve(user);
+          resolve(kitten);
         });
     });
     return promise;
   });
 }
 
-function getKittenByKittenname(username) {
+function getKittenByKittenname(kittenname) {
   return getDB().then((db) => {
     const promise = new Promise((resolve, reject) => {
       db.collection('kittens')
-        .findOne({ username }, (findError, user) => {
+        .findOne({ kittenname }, (findError, kitten) => {
           if (findError) reject(findError);
           db.close();
-          resolve(user);
+          resolve(kitten);
         });
     });
     return promise;

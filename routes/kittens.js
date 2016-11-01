@@ -17,10 +17,10 @@ kittensRouter.post('/', createKitten, (req, res) => {
  * It redirects to /login when attempted to be reached by a non logged in user
  * It is "protected" by the authenticate middleware from the auth library
  */
-kittensRouter.get('/newcat', authenticate, (req, res) => {
-  res.render('kittens/kittenAccount', {
-    user: res.user,
-  });
-});
+// kittensRouter.get('/profile', authenticate, (req, res) => {
+//   res.render('users/account', {
+//     user: res.user,
+//   });
+// });
 
 module.exports = kittensRouter;
