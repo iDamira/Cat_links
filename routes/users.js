@@ -23,5 +23,6 @@ usersRouter.get('/profile', authenticate, (req, res) => {
   });
 });
 
+
 module.exports = usersRouter;
 
