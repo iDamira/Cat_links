@@ -3,10 +3,10 @@ This app will allow users to find cat breeders in their area and buy KITTENS!
 
 # wireframes
 
-(/wireframes/landingpage.png![Login wireframe])
+![Login wireframe](/wireframes/landingpage.png![Login wireframe])
 
 # Information Flow Model
-https://postimg.org/image/iy17hy11n/][img]https://s17.postimg.org/iy17hy11n/6422714ac289.png
+![Login wireframe](/wireframes/info.png![Login wireframe])
 
 # Technologies used:
 
