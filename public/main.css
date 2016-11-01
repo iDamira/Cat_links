@@ -2,20 +2,42 @@
   border: 1px solid black;
 }
 */
+body {
+  background-color: rgba(153, 153, 174, 1);
+  background-image: url(sparticus_portrait_2.JPG);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 15px;
+}
+
 .header {
   height: 100px;
-  background-color: #fc9870;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
 }
 
 .siteName {
   width: 45%;
   float: left;
   overflow: auto;
+  margin-left: 5%;
+  margin-bottom: 1%;
+  margin-top: -1%;
+}
+.searchForm {
+  width: 20%;
+  margin-left: 2%;
 }
 
+.randomFacts {
+  width: 70%;
+  padding: 10px 40px 0 40px;
+  text-align: center;
+}
 .searchForm, .randomFacts {
   float: left;
-  width: 40%;
 }
 
 .navbar {
@@ -36,6 +58,7 @@
 
 .navbar a {
   text-decoration: none;
+  color: red;
 }
 
 .body {
@@ -47,7 +70,7 @@
 }
 
 .loginForm {
-  border: 3px double black;
+  border: 3px double white;
   border-radius: 15px;
   margin: 15% 20% 0 20%;
   padding: 5%;
@@ -55,10 +78,22 @@
 
 .body {
   text-align: center;
-  width: 500px;
   margin: 0 auto;
 }
 
+.uName {
+  color: red;
+}
 
+.something {
+  background-color: rgba(0, 51, 102, 1);
+}
 
+.userInfo {
+  margin-left: 3%;
+}
 
+span {
+  font-size: 20px;
+  color: #669;
+}

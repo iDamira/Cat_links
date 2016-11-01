@@ -7,23 +7,24 @@
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
-<body>
-  <h2>Hello <%= user.username %></h2>
-  <p>Here is your info:</p>
-  <h4>You are:</h4><p> <%= user.type %></p>
-  <h4>Email:</h4><p> <%= user.email %></p>
-  <h4>Phone:</h4><p> <%= user.phone %></p>
-  <h4>First Name:</h4><p> <%= user.firstname %></p>
-  <h4>Last Name:</h4><p> <%= user.lastname %></p>
-  <h4>City:</h4><p> <%= user.city %></p>
-  <h4>State:</h4><p> <%= user.state %></p>
-  <h4>Zipcode:</h4><p> <%= user.zipcode %></p>
+<body class="something">
+<div class="userInfo">
+  <h2>Hello,<span class=uName> <%= user.username %></span></h2>
+  <p><span>You are:</span> <%= user.type %></p>
+  <p><span>Email:</span> <%= user.email %></p>
+  <p><span>Phone:</span> <%= user.phone %></p>
+  <p><span>First Name:</span> <%= user.firstname %></p>
+  <p><span>Last Name:</span> <%= user.lastname %></p>
+  <p><span>City:</span> <%= user.city %></p>
+  <p><span>State:</span> <%= user.state %></p>
+  <p><span>Zipcode:</span> <%= user.zipcode %></p>
 
   <a href="../newcat"><p>Add a new kitten to the database</p></a>
 
    <p>Have a picture?</p>
   <input type="file" name="user[pic]" accept="image/*">
   <input type="submit" value="Submit!">
+  </div>
 </form>
 </body>
 </html>

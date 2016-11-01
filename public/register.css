@@ -1,0 +1,15 @@
+body {
+  background-color: rgba(153, 153, 174, 1);
+  background-image: url(sparticus_portrait_2.JPG);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 15px;
+}
+
+.registerForm {
+  border: 1px soli white;
+  margin: 3% 0 0 10%;
+}
+
